@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {httpResource} from '@angular/common/http';
 import {Projet} from '../../models/projet.model';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProjetsService {
-  private readonly apiUrl = 'http://localhost:3000/projet';
+  private apiUrl = environment.apiUrl;
 
-  // httpResource crée automatiquement les Signals : .value(), .isLoading(), .error()
   readonly projectsResource = httpResource<Projet[]>(() => this.apiUrl);
 }
