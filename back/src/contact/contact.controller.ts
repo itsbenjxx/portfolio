@@ -3,7 +3,7 @@ import { ContactService } from './contact.service';
 import { UpdateContactDto } from './dto/update-contact.dto';
 import {ContactDto} from "./dto/contact.dto";
 
-@Controller('api/contact')
+@Controller('contact')
 export class ContactController {
   constructor(private readonly contactService: ContactService) {}
 
