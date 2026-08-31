@@ -1,0 +1,206 @@
+@use '../../variables' as *
+
+.projets-container
+  color: #fff
+  position: relative
+
+.hero-header
+  margin-bottom: 60px
+
+  h1
+    font-size: 52px
+    font-weight: 700
+    margin-bottom: 16px
+    letter-spacing: -1px
+
+  p
+    font-size: 18px
+    color: $text
+    max-width: 650px
+    line-height: 1.6
+
+.projects-grid
+  display: grid
+  grid-template-columns: repeat(12, 1fr)
+  gap: 24px
+
+.project-card
+  background: #121316
+  border: 1px solid rgba(255, 255, 255, 0.08)
+  border-radius: 16px
+  overflow: hidden
+  display: flex
+  flex-direction: column
+  position: relative
+  transition: border-color 0.3s ease
+
+  &:hover
+    border-color: rgba(255, 255, 255, 0.2)
+
+  // 1. CARTE LARGE (ex: Nexus) - Image en fond avec fondu vertical
+  &.large
+    grid-column: span 7
+
+    .card-image
+      position: absolute
+      inset: 0
+      width: 100%
+      height: 100%
+      z-index: 0
+
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 90%)
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 90%)
+
+    .card-content
+      position: relative
+      z-index: 1
+      min-height: 380px
+      justify-content: flex-end
+
+      a
+        margin-top: 0
+
+  // 2. CARTE MEDIUM (ex: Chat) - Image en haut avec fondu vers le bas
+  &.medium
+    grid-column: span 5
+
+    .card-image
+      height: 200px
+      width: 100%
+
+      img
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%)
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%)
+
+  // 3. CARTE SMALL (ex: Financial API) - Sans image, icône en haut
+  &.small
+    grid-column: span 4
+
+    .card-content
+      justify-content: space-between
+      min-height: 340px
+
+      a
+        pointer-events: none
+
+  // 4. CARTE HORIZONTAL (ex: Echo AI) - Image à droite avec fondu horizontal vers la gauche
+  &.horizontal
+    grid-column: span 8
+    flex-direction: row
+    align-items: stretch
+
+    .card-content
+      width: 50%
+      z-index: 1
+
+    .card-image
+      width: 50%
+      height: 100%
+      position: relative
+      order: 2
+
+      img
+        -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%)
+        mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%)
+
+.card-image
+  width: 100%
+  overflow: hidden
+
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.card-content
+  padding: 32px
+  display: flex
+  flex-direction: column
+  flex-grow: 1
+
+.icon-badge
+  width: 44px
+  height: 44px
+  background: rgba(255, 255, 255, 0.05)
+  border: 1px solid rgba(255, 255, 255, 0.1)
+  border-radius: 10px
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-bottom: 24px
+
+  img
+    width: 22px
+    height: 22px
+
+.tags
+  display: flex
+  gap: 8px
+  flex-wrap: wrap
+  margin-bottom: 16px
+
+.tag
+  background: rgba(255, 255, 255, 0.06)
+  border: 1px solid rgba(255, 255, 255, 0.1)
+  color: #c9d1d9
+  padding: 4px 10px
+  border-radius: 6px
+  font-size: 12px
+  font-weight: 500
+  backdrop-filter: blur(4px)
+
+h2
+  font-size: 24px
+  font-weight: 700
+  margin: 0 0 12px 0
+  color: #f0f6fc
+  letter-spacing: -0.3px
+
+p
+  color: #8b949e
+  font-size: 14px
+  line-height: 1.6
+  margin-bottom: 24px
+
+.project-link
+  display: inline-flex
+  align-items: center
+  gap: 8px
+  color: #f0f6fc
+  text-decoration: none
+  font-size: 14px
+  font-weight: 600
+  margin-top: auto
+
+  .icon
+    transition: transform 0.2s ease
+
+  &:hover .icon
+    transform: translateX(4px)
+
+// Responsive pour tablettes et mobiles
+@media (max-width: 992px)
+  .project-card
+    &.large, &.medium, &.small, &.horizontal
+      grid-column: span 12
+
+    &.large
+      .card-content
+        min-height: auto
+
+    &.horizontal
+      flex-direction: column
+
+      .card-content, .card-image
+        width: 100%
+
+      .card-image
+        height: 200px
+
+        img
+          -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%)
+          mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%)

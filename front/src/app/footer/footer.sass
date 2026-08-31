@@ -1,0 +1,29 @@
+@use '../../variables' as *
+
+footer
+  border-top: 1px solid #2a2a2a
+  padding: 2rem 200px
+
+.footer-container
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  .copyright
+    color: $text
+
+  ul
+    display: flex
+    gap: 1.5rem
+    list-style: none
+
+    li
+      min-width: 65px
+
+      a
+        color: $text
+        text-decoration: none
+
+        &:hover
+          color: $primary-bis
+          font-weight: bold

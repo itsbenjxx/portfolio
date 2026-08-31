@@ -1,0 +1,113 @@
+@use '../../variables' as *
+
+.home-container
+  color: $text
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  min-height: calc(100vh - 30vh)
+
+  .left-side
+    width: 70%
+
+    /* Status Badge */
+    .status-badge
+      display: inline-flex
+      align-items: center
+      gap: 10px
+      background: rgba(255, 255, 255, 0.05)
+      border: 1px solid rgba(255, 255, 255, 0.1)
+      padding: 6px 16px
+      border-radius: 20px
+      font-size: 13px
+      color: #c9d1d9
+      margin-bottom: 28px
+
+      .status-dot
+        width: 8px
+        height: 8px
+        background-color: #38bdf8
+        border-radius: 50%
+        box-shadow: 0 0 8px #38bdf8
+
+    h1
+      font-size: 64px
+      margin-top: 0
+
+      .dev
+        color: #fff
+
+      .createur
+        color: #fff
+
+      .exp,.evo
+        background: linear-gradient(to right, #818cf8 0%, #38bdf8 100%)
+        -webkit-background-clip: text
+        background-clip: text
+        -webkit-text-fill-color: transparent
+        color: transparent
+
+    p
+      font-size: 18px
+      color: $text
+      line-height: 28.8px
+      letter-spacing: 1px
+      width: 90%
+
+    .btn-home
+      display: flex
+      margin: 40px 0
+
+      .btn-projets,.btn-contacts
+        padding: 12px 32px
+        color: #fff
+        border-radius: 12px
+        text-decoration: none
+        margin-right: 20px
+        font-size: 16px
+
+      .btn-projets
+        background-color: $primary
+
+        &:hover
+          background: #4338ca
+          box-shadow: 0 6px 24px rgba(79, 70, 229, 0.5)
+
+        img
+          color: #fff
+
+      .btn-contacts
+        border: 1px solid #fff
+
+        &:hover
+          background: rgba(255, 255, 255, 0.05)
+          box-shadow: 0 6px 24px rgba(255, 255, 255, 0.2)
+
+    .technos
+      border-top: 1px solid #2a2a2a
+      display: flex
+      justify-content: start
+      align-items: center
+
+      div
+        margin: 40px 40px 40px 0
+        display: flex
+        align-items: center
+
+        img
+          margin-right: 10px
+
+  .right-side
+    width: 50%
+    display: flex
+    justify-content: flex-end
+    align-items: center
+
+    img
+      border-radius: 12px
+      transform: rotate(1deg)
+      transition: transform 0.5s ease
+
+      &:hover
+        transform: rotate(0deg)

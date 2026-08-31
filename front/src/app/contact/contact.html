@@ -1,0 +1,123 @@
+<section class="contact-container">
+  <header class="hero-header">
+    <h1>Contactez-moi</h1>
+    <p>
+      Ouvert à de nouvelles opportunités ou simplement à une discussion technique.<br>
+      Construisons ensemble quelque chose de solide.
+    </p>
+  </header>
+
+  <div class="contact-grid">
+    <!-- Left Column: Info & Socials -->
+    <div class="left-column">
+
+      <div class="card contact-info">
+        <h3>Informations</h3>
+
+        <div class="info-item">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div class="details">
+            <span class="label">NOM</span>
+            <span class="value">Benjamin Fourmont</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="details">
+            <span class="label">EMAIL</span>
+            <a href="mailto:fourmont.ben@gmail.com" class="value">fourmont.ben@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="details">
+            <span class="label">LOCALISATION</span>
+            <span class="value">Île-de-France</span>
+            <span class="sub-value">Remote Worldwide</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card socials">
+        <h3>Réseaux</h3>
+        <div class="social-links">
+          <a href="https://github.com/itsbenjxx/" target="_blank" class="social-btn" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/benjamin-fourmont/"  target="_blank" class="social-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="4" height="15"/>
+              <circle cx="4" cy="4" r="2"/>
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-14h4v2a4 4 0 0 1 4-2z"/>
+            </svg>
+          </a>
+          <a href="mailto:fourmont.ben@gmail.com" class="social-btn" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Contact Form -->
+    <div class="right-column">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="card form-card">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input id="name" type="text" formControlName="name" placeholder="Benjamin Fourmont">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email" placeholder="your@email.fr">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Sujet</label>
+          <input id="subject" type="text" formControlName="subject" placeholder="Demande de projet">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" formControlName="message" rows="6" placeholder="Bonjour, je souhaiterais discuter de..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-submit" [disabled]="contactForm.invalid">
+            <span>Envoyer le message</span>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>

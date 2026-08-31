@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="logo">
+    <a routerLink="/">PORTFOLIO</a>
+  </div>
+
+  <nav class="navbar">
+    <ul>
+      <li>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      </li>
+      <li>
+        <a routerLink="/projets" routerLinkActive="active">Projets</a>
+      </li>
+      <li>
+        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="actions">
+    <a href="/pdf/cv.pdf" target="_blank" class="btn-cv">CV</a>
+  </div>
+</header>
+<div class="gradient" [style.transform]="gradientTransform()"></div>

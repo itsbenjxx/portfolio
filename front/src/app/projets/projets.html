@@ -1,0 +1,55 @@
+<section class="projets-container">
+  <header class="hero-header">
+    <h1>Conçus pour impacter.</h1>
+    <p>
+      Une sélection rigoureuse de plateformes solides, de systèmes en temps réel et d'architectures évolutives. Chaque projet témoigne d'un engagement envers un code propre, des performances optimales et une précision esthétique haut de gamme.
+    </p>
+  </header>
+
+  <div class="projects-grid"><!-- État de chargement -->
+    @if (projectsResource.isLoading()) {
+      <p>Chargement des projets...</p>
+    }
+
+    <!-- Gestion des erreurs -->
+    @if (projectsResource.error(); as err) {
+      <p class="error">Une erreur est survenue lors du chargement.</p>
+    }
+
+    @if (projectsResource.value(); as projects) {
+      @for (project of projects; track project.title) {
+        <article class="project-card" [ngClass]="project.size || ''">
+
+          @if (project.image) {
+            <div class="card-image">
+              <img [src]="project.image" [alt]="project.title">
+            </div>
+          }
+
+          <div class="card-content">
+            @if (project.icon) {
+              <div class="icon-badge">
+                <img [src]="project.icon" alt="Icon">
+              </div>
+            }
+
+            <div class="tags">
+              @for (tag of project.tags; track tag) {
+                <span class="tag">{{ tag }}</span>
+              }
+            </div>
+
+            <h2>{{ project.title }}</h2>
+            <p>{{ project.description }}</p>
+
+            <a href="{{ project.linkRef }}" target="_blank" class="project-link">
+              <span>{{ project.linkText }}</span>
+              <span class="icon">{{ project.linkIcon }}</span>
+            </a>
+          </div>
+
+        </article>
+      }
+    }
+  </div>
+</section>
