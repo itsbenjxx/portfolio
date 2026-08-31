@@ -1,5 +1,6 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
 
 export interface ContactFormPayload {
   name: string;
@@ -12,11 +13,10 @@ export interface ContactFormPayload {
   providedIn: 'root',
 })
 export class ContactService {
-
+  private apiUrl = environment.apiUrl;
   private readonly http = inject(HttpClient)
-  private readonly apiUrl = 'http://localhost:3000/contact';
 
   sendMessage(payload: ContactFormPayload) {
-    return this.http.post(this.apiUrl+'/sendMessage', payload)
+    return this.http.post(this.apiUrl+'/contact/sendMessage', payload)
   }
 }
