@@ -49,7 +49,7 @@ async function main() {
             linkText: 'Visiter le site',
             linkRef: 'https://tai-dam-traiteur.fr/',
             linkIcon: '→',
-            image: 'img/commercial-mockup.png',
+            image: 'img/taidam-mockup.png',
             size: ProjectSize.horizontal
         }
     ];
