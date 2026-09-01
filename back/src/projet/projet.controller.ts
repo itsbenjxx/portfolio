@@ -15,8 +15,6 @@ export class ProjetController {
   }
 
   @Get('list')
-  @CacheKey('projets')
-  @CacheTTL(86400000)
   findAll() {
     return this.projetService.findAll();
   }
