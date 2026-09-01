@@ -9,5 +9,5 @@ import {environment} from '../../../environments/environment';
 export class ProjetsService {
   private apiUrl = environment.apiUrl;
 
-  readonly projectsResource = httpResource<Projet[]>(() => this.apiUrl+'/projet');
+  readonly projectsResource = httpResource<Projet[]>(() => this.apiUrl+'/projet/list');
 }

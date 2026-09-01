@@ -19,7 +19,7 @@ async function main() {
             linkText: 'Visiter le site',
             linkRef: 'https://www.nota-risques-urba.fr/',
             linkIcon: '→',
-            image: '/img/nru-mockup.png',
+            image: 'img/nru-mockup.png',
             size: ProjectSize.large
         },
         {

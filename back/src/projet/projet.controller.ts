@@ -1,9 +1,11 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {Controller, Get, Post, Body, Patch, Param, Delete, UseInterceptors} from '@nestjs/common';
 import { ProjetService } from './projet.service';
 import { CreateProjetDto } from './dto/create-projet.dto';
 import { UpdateProjetDto } from './dto/update-projet.dto';
+import {CacheInterceptor, CacheKey, CacheTTL} from "@nestjs/cache-manager";
 
 @Controller('projet')
+@UseInterceptors(CacheInterceptor)
 export class ProjetController {
   constructor(private readonly projetService: ProjetService) {}
 
@@ -12,7 +14,9 @@ export class ProjetController {
     return this.projetService.create(createProjetDto);
   }
 
-  @Get()
+  @Get('list')
+  @CacheKey('projets')
+  @CacheTTL(86400000)
   findAll() {
     return this.projetService.findAll();
   }

@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'https://www.benjamin-fourmont.fr/api'
+  apiUrl: 'https://benjamin-fourmont.fr/api'
 };
