@@ -1,15 +1,26 @@
 @use '../../variables' as *
-
 header
   display: flex
   justify-content: space-between
   align-items: center
-  padding: 2rem 200px
+  padding: 1.5rem 5%
   color: #fff
   border-bottom: 1px solid #2a2a2a
-  z-index: 1
+  z-index: 10
   background-color: $background
+  position: relative
 
+  // Écrans très larges (Large Desktop)
+  @media (min-width: 1440px)
+    padding: 2rem 200px
+
+  // Écrans intermédiaires / Tablettes
+  @media (max-width: 1024px)
+    padding: 1.2rem 2rem
+
+  // Mobile
+  @media (max-width: 768px)
+    
 
   .logo
     a
@@ -18,7 +29,14 @@ header
       font-size: 24px
       color: #fff
 
+      @media (max-width: 768px)
+        font-size: 20px
+
+
   .navbar
+    @media (max-width: 768px)
+      width: 100%
+
     ul
       display: flex
       gap: 1.5rem
@@ -26,14 +44,22 @@ header
       margin: 0
       padding: 0
 
+      @media (max-width: 768px)
+        justify-content: center
+        gap: 1rem
+        flex-wrap: wrap
+
     li
-      min-width: 65px
+      min-width: max-content
 
     a
       color: $text
       text-decoration: none
       transition: color 0.3s
       font-size: 16px
+
+      @media (max-width: 768px)
+        font-size: 14px
 
       &:hover,
       &.active
@@ -47,12 +73,15 @@ header
     border-radius: 12px
     text-decoration: none
     font-size: 16px
-    //font-weight: bold
+    white-space: nowrap
+
+    @media (max-width: 768px)
+      padding: 6px 16px
+      font-size: 14px
 
     &:hover
       background: #4338ca
       box-shadow: 0 6px 24px rgba(79, 70, 229, 0.5)
-
 
 .gradient
   min-height: 800px
@@ -61,10 +90,14 @@ header
   background: radial-gradient(circle, rgba(79, 70, 229, 0.2) 0%, rgba(79, 70, 229, 0) 70%)
   position: absolute
   top: -40vh
-  left: 20vw
+  left: 15vw
   z-index: -1
   pointer-events: none
   will-change: transform
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)
   @media (max-width: 1536px)
-    left: 16vw
+    left: 10vw
+  @media (max-width: 768px)
+    min-height: 500px
+    min-width: 500px
+    left: 0

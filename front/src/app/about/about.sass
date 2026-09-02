@@ -1,0 +1,214 @@
+@use '../../variables' as *
+
+/* --- GRAND ÉCRAN PC (> 1400px) --- */
+.about-container
+  color: #fff
+
+.hero-section
+  display: flex
+  gap: 50px
+  align-items: flex-end
+  margin-bottom: 80px
+
+.image-wrapper
+  width: 45%
+  flex-shrink: 0
+
+  img
+    width: 85%
+    height: auto
+    border-radius: 20px
+    object-fit: cover
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)
+    mask-image: linear-gradient(to top, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 99%)
+
+.bio-content
+  width: 55%
+
+  h1
+    font-size: 56px
+    font-weight: 700
+    line-height: 1.1
+    margin-top: 0
+    margin-bottom: 24px
+
+    .white-text
+      color: #f0f6fc
+
+    .gradient-text
+      background: linear-gradient(to right, #818cf8 0%, #38bdf8 100%)
+      -webkit-background-clip: text
+      background-clip: text
+      -webkit-text-fill-color: transparent
+
+  .description
+    font-size: 16px
+    color: #8b949e
+    line-height: 1.6
+    margin-bottom: 20px
+
+.terminal-card
+  background: #090a0f
+  border: 1px solid rgba(255, 255, 255, 0.1)
+  border-radius: 12px
+  padding: 16px 20px
+  margin-top: 32px
+
+  .terminal-header
+    display: flex
+    gap: 8px
+    margin-bottom: 16px
+
+    .dot
+      width: 10px
+      height: 10px
+      border-radius: 50%
+
+      &.red
+        background-color: #ff5f56
+      &.yellow
+        background-color: #ffbd2e
+      &.green
+        background-color: #27c93f
+
+  .terminal-body
+    font-family: monospace
+    font-size: 13px
+
+    .terminal-line
+      margin-bottom: 10px
+      display: flex
+      flex-direction: column
+      gap: 4px
+
+      &:last-child
+        margin-bottom: 0
+
+      .prompt
+        color: #8b949e
+
+      .response
+        color: #e6edf3
+
+.stack-section
+  h2
+    font-size: 32px
+    font-weight: 700
+    color: #f0f6fc
+    margin-bottom: 32px
+
+.cards-grid
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: 24px
+
+.stack-card
+  background: #121316
+  border: 1px solid rgba(255, 255, 255, 0.08)
+  border-radius: 16px
+  padding: 28px
+
+  .card-header
+    display: flex
+    align-items: center
+    gap: 12px
+    margin-bottom: 24px
+
+    .icon
+      color: #818cf8
+      display: flex
+      align-items: center
+
+      svg
+        width: 22px
+        height: 22px
+
+    h3
+      font-size: 20px
+      font-weight: 600
+      margin: 0
+      color: #f0f6fc
+
+  .skills-list
+    list-style: none
+    padding: 0
+    margin: 0
+
+    .skill-item
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 12px 0
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06)
+
+      &:last-child
+        border-bottom: none
+
+      .skill-name
+        font-size: 14px
+        color: #c9d1d9
+
+      .skill-level
+        font-size: 13px
+        color: #8b949e
+        font-weight: 500
+
+/* --- PETIT ÉCRAN PC (1024px - 1399px) --- */
+@media (max-width: 1399px)
+  .about-container
+    padding: 0 6%
+
+  .hero-section
+    gap: 32px
+
+  .bio-content h1
+    font-size: 46px
+
+/* --- TABLETTE (768px - 1023px) --- */
+@media (max-width: 1023px)
+  .about-container
+    padding: 0 4%
+    text-align: center
+
+  .image-wrapper
+    order: 1
+
+  .bio-content
+    order: 0
+
+  .terminal-card
+    display: none
+
+  .hero-section
+    flex-direction: column
+
+    .image-wrapper, .bio-content
+      width: 100%
+
+  .cards-grid
+    grid-template-columns: 1fr
+    gap: 20px
+
+/* --- MOBILE (< 768px) --- */
+@media (max-width: 767px)
+  .about-container
+    padding: 0 1rem
+    text-align: center
+
+  .image-wrapper
+    order: 1
+
+  .hero-section
+    margin-bottom: 40px
+
+  .bio-content
+    order: 0
+
+  .bio-content h1
+    font-size: 34px
+
+  .terminal-card
+    display: none
+
+  .stack-card
+    padding: 20px

@@ -1,0 +1,81 @@
+<section class="about-container">
+  <div class="hero-section">
+    <div class="image-wrapper">
+      <img src="/img/about.png" alt="Benjamin Fourmont workspace">
+    </div>
+
+    <div class="bio-content">
+      <h1>
+        <span class="white-text">Elegance</span><br>
+        <span class="gradient-text">Ingénieuse.</span>
+      </h1>
+
+      <p class="description">
+        Architecte Digital, je me consacre à faire le lien entre des systèmes backend robustes et évolutifs et des expériences frontend interactives de haute fidélité. Fort d'une solide formation en informatique et guidé par un design minimaliste, je conçois des produits aussi performants qu'esthétiques.
+      </p>
+
+      <p class="description">
+        Aujourd'hui responsable d'initiatives techniques au sein d'une entreprise tech de premier plan, je suis spécialisé dans les environnements Full Stack, les systèmes distribués et les architectures UI modernes.
+      </p>
+
+      <div class="terminal-card">
+        <div class="terminal-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line">
+            <span class="prompt">~ whoami</span>
+            <span class="response">&gt; Senior Fullstack Engineer</span>
+          </div>
+          <div class="terminal-line">
+            <span class="prompt">~ cat mission.txt</span>
+            <span class="response">&gt; Building systems that scale and interfaces that inspire.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stack-section">
+    <h2>Technical Stack</h2>
+
+    <div class="cards-grid">
+      @for (category of categories; track category.title) {
+        <div class="stack-card">
+          <div class="card-header">
+            <div class="icon">
+              @if (category.icon === 'code') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              } @else if (category.icon === 'database') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              } @else if (category.icon === 'cloud') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                </svg>
+              }
+            </div>
+            <h3>{{ category.title }}</h3>
+          </div>
+
+          <ul class="skills-list">
+            @for (skill of category.skills; track skill.name) {
+              <li class="skill-item">
+                <span class="skill-name">{{ skill.name }}</span>
+                <span class="skill-level">{{ skill.level }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

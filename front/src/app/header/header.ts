@@ -26,7 +26,8 @@ export class Header {
   gradientTransform = computed(() => {
     const url = this.currentUrl();
     if (url.includes('/projets')) return 'translateX(10vw)';
-    if (url.includes('/contact')) return 'translateX(20vw)';
+    if (url.includes('/about')) return 'translateX(20vw)';
+    if (url.includes('/contact')) return 'translateX(30vw)';
     return  'translateX(0)';
   })
 }
