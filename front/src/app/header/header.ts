@@ -1,4 +1,4 @@
-import {Component, computed, inject} from '@angular/core';
+import {Component, computed, inject, signal} from '@angular/core';
 import {NavigationEnd, Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {filter, map} from 'rxjs';
@@ -14,6 +14,7 @@ import {filter, map} from 'rxjs';
 })
 export class Header {
   private router = inject(Router);
+  isMenuOpen = signal(false);
 
   private currentUrl = toSignal(
     this.router.events.pipe(
@@ -30,4 +31,12 @@ export class Header {
     if (url.includes('/contact')) return 'translateX(30vw)';
     return  'translateX(0)';
   })
+
+  toggleMenu() {
+    this.isMenuOpen.update(state => !state);
+  }
+
+  closeMenu() {
+    this.isMenuOpen.set(false);
+  }
 }

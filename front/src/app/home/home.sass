@@ -111,3 +111,43 @@
 
       &:hover
         transform: rotate(0deg)
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px)
+  .home-container
+    text-align: center
+    min-height: auto
+
+    .left-side
+      width: 100%
+      h1
+        font-size: 38px
+        line-height: 1.15
+        letter-spacing: -0.5px
+
+      p.description
+        width: 100%
+        font-size: 15px
+
+      .btn-home
+        flex-direction: column
+        gap: 20px
+        align-items: center
+        margin-bottom: 40%
+
+        .btn-projets,.btn-contacts
+          margin: 0 0 0
+
+
+      .technos
+        display: none
+        flex-direction: column
+        padding-top: 2rem
+        div
+          margin: 20px
+        img
+          font-size: 12px
+
+    .right-side
+      display: none
+
