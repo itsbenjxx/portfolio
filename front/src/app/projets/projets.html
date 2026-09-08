@@ -6,17 +6,18 @@
     </p>
   </header>
 
-  <div class="projects-grid"><!-- État de chargement -->
-    @if (projectsResource.isLoading()) {
-      <p>Chargement des projets...</p>
-    }
+  <div class="projects-grid">
+    <!-- État de chargement -->
+<!--    @if (projectsResource.isLoading()) {-->
+<!--      <p>Chargement des projets...</p>-->
+<!--    }-->
 
-    <!-- Gestion des erreurs -->
-    @if (projectsResource.error(); as err) {
-      <p class="error">Une erreur est survenue lors du chargement.</p>
-    }
+<!--    &lt;!&ndash; Gestion des erreurs &ndash;&gt;-->
+<!--    @if (projectsResource.error(); as err) {-->
+<!--      <p class="error">Une erreur est survenue lors du chargement.</p>-->
+<!--    }-->
 
-    @if (projectsResource.value(); as projects) {
+<!--    @if (projectsResource.value(); as projects) {-->
       @for (project of projects; track project.title) {
         <article class="project-card" [ngClass]="project.size || ''">
 
@@ -50,6 +51,6 @@
 
         </article>
       }
-    }
+<!--    }-->
   </div>
 </section>
