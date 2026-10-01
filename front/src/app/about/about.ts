@@ -24,9 +24,10 @@ export class About {
       title: 'Front-end',
       icon: 'code',
       skills: [
-        { name: 'JS / Angular', level: '90%' },
-        { name: 'TypeScript', level: '90%' },
-        { name: 'CSS / SASS', level: '90%' },
+        { name: 'TypeScript / Angular', level: '90%' },
+        { name: 'JavaScript / Vue.js', level: '60%' },
+        { name: 'CSS / SASS', level: '95%' },
+        { name: 'HTML', level: '95%' },
       ]
     },
     {
@@ -34,8 +35,9 @@ export class About {
       icon: 'database',
       skills: [
         { name: 'PHP / Symfony', level: '90%' },
-        { name: 'Node.js / Nest.js', level: '60%' },
         { name: 'Java / Spring Boot', level: '80%' },
+        { name: 'Laravel', level: '70%' },
+        { name: 'Node.js / NestJS', level: '60%' },
       ]
     },
     {
@@ -45,6 +47,7 @@ export class About {
         { name: 'MySQL', level: '90%' },
         { name: 'PostgreSQL', level: '90%' },
         { name: 'MongoDB', level: '70%' },
+        { name: 'ElasticSearch', level: '70%' },
       ]
     }
   ];
