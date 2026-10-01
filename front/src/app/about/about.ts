@@ -21,33 +21,30 @@ interface SkillCategory {
 export class About {
   categories: SkillCategory[] = [
     {
-      title: 'Frontend',
+      title: 'Front-end',
       icon: 'code',
       skills: [
-        { name: 'JS / Angular', level: '95%' },
+        { name: 'JS / Angular', level: '90%' },
         { name: 'TypeScript', level: '90%' },
-        { name: 'Vue.js', level: '85%' },
         { name: 'CSS / SASS', level: '90%' },
       ]
     },
     {
-      title: 'Backend',
+      title: 'Back-end',
       icon: 'database',
       skills: [
         { name: 'PHP / Symfony', level: '90%' },
-        { name: 'Node.js / Nest.js', level: '70%' },
-        { name: 'Java / Spring', level: '70%' },
-        { name: 'MySQL / PostgreSQL / MongoDB', level: '85%' },
+        { name: 'Node.js / Nest.js', level: '60%' },
+        { name: 'Java / Spring Boot', level: '80%' },
       ]
     },
     {
-      title: 'Cloud & Tools',
+      title: 'Bases de données',
       icon: 'cloud',
       skills: [
-        { name: 'Git', level: '95%' },
-        { name: 'Docker', level: '70%' },
-        { name: 'CI/CD', level: '70%' },
-        { name: 'AWS', level: '65%' },
+        { name: 'MySQL', level: '90%' },
+        { name: 'PostgreSQL', level: '90%' },
+        { name: 'MongoDB', level: '70%' },
       ]
     }
   ];

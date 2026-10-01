@@ -60,7 +60,7 @@ export class Projets {
     },
     {
       title: 'Taï Dam Traiteur',
-      description: 'Site vitrine sur-mesure pour un traiteur asiatique, intégrant une présentation immersive du savoir-faire culinaire et un module de prise de commande en ligne via un formulaire dynamique.',
+      description: 'Site vitrine sur-mesure pour un traiteur, intégrant une présentation immersive du savoir-faire culinaire et un module de prise de commande en ligne via un formulaire dynamique.',
       tags: ['Wordpress', 'UX/UI'],
       linkText: 'Visiter le site',
       linkRef: 'https://tai-dam-traiteur.fr/',
