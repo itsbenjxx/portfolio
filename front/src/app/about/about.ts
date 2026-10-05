@@ -47,7 +47,7 @@ export class About {
         { name: 'MySQL', level: '90%' },
         { name: 'PostgreSQL', level: '90%' },
         { name: 'MongoDB', level: '70%' },
-        { name: 'ElasticSearch', level: '70%' },
+        // { name: 'ElasticSearch', level: '70%' },
       ]
     }
   ];
